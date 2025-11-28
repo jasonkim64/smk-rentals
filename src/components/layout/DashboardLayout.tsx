@@ -48,7 +48,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         </Button>
         <div className="flex-1 flex items-center justify-center">
           <Car className="h-6 w-6 text-primary mr-2" />
-          <span className="font-bold text-lg">SafariWheels</span>
+          <span className="font-bold text-lg">SMK Rentals</span>
         </div>
         <Button variant="ghost" size="icon">
           <Bell className="h-5 w-5" />
@@ -77,7 +77,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               <div className="p-2 bg-primary rounded-lg">
                 <Car className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="font-bold text-lg">SafariWheels</span>
+              <span className="font-bold text-lg">SMK Rentals</span>
             </div>
             <Button
               variant="ghost"
@@ -119,9 +119,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 <User className="h-5 w-5" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium truncate">John Kamau</p>
+                <p className="text-sm font-medium truncate">Samuel Kiama</p>
                 <p className="text-xs text-sidebar-foreground/60 truncate">
-                  admin@safariwheels.co.ke
+                  admin@smkrentals.co.ke
                 </p>
               </div>
             </div>
