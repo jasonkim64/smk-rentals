@@ -2,12 +2,12 @@ import { useState } from "react";
 import { formatKES } from "@/lib/formatCurrency";
 
 const cars = [
-  { id: 1, name: "Toyota Prado TX", image: "https://images.unsplash.com/photo-1625231334168-25bec0aca7de?w=400&h=300&fit=crop", category: "SUV", year: 2022, seats: 7, fuel: "Diesel", transmission: "Automatic", dailyRate: 8500, status: "Available", plate: "KCZ 456P" },
-  { id: 2, name: "Mercedes E-Class", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=300&fit=crop", category: "Luxury", year: 2023, seats: 5, fuel: "Petrol", transmission: "Automatic", dailyRate: 15000, status: "Rented", plate: "KDA 789Q" },
-  { id: 3, name: "Nissan X-Trail", image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=400&h=300&fit=crop", category: "SUV", year: 2021, seats: 5, fuel: "Petrol", transmission: "Automatic", dailyRate: 6000, status: "Available", plate: "KCB 123M" },
-  { id: 4, name: "Land Cruiser V8", image: "https://images.unsplash.com/photo-1594502184342-2e12f877aa73?w=400&h=300&fit=crop", category: "Premium SUV", year: 2023, seats: 8, fuel: "Diesel", transmission: "Automatic", dailyRate: 18000, status: "Maintenance", plate: "KDB 567R" },
-  { id: 5, name: "Toyota Vitz", image: "https://images.unsplash.com/photo-1623006772851-a950dc9d322b?w=400&h=300&fit=crop", category: "Economy", year: 2020, seats: 5, fuel: "Petrol", transmission: "Automatic", dailyRate: 3500, status: "Available", plate: "KBZ 234L" },
-  { id: 6, name: "Toyota Hiace", image: "https://images.unsplash.com/photo-1570733577524-3a047079e80d?w=400&h=300&fit=crop", category: "Van", year: 2022, seats: 14, fuel: "Diesel", transmission: "Manual", dailyRate: 12000, status: "Available", plate: "KCC 890N" },
+  { id: 1, name: "Toyota Prado TX", category: "SUV", year: 2022, seats: 7, fuel: "Diesel", transmission: "Automatic", dailyRate: 8500, status: "Available", plate: "KCZ 456P" },
+  { id: 2, name: "Mercedes E-Class", category: "Luxury", year: 2023, seats: 5, fuel: "Petrol", transmission: "Automatic", dailyRate: 15000, status: "Rented", plate: "KDA 789Q" },
+  { id: 3, name: "Nissan X-Trail", category: "SUV", year: 2021, seats: 5, fuel: "Petrol", transmission: "Automatic", dailyRate: 6000, status: "Available", plate: "KCB 123M" },
+  { id: 4, name: "Land Cruiser V8", category: "Premium SUV", year: 2023, seats: 8, fuel: "Diesel", transmission: "Automatic", dailyRate: 18000, status: "Maintenance", plate: "KDB 567R" },
+  { id: 5, name: "Toyota Vitz", category: "Economy", year: 2020, seats: 5, fuel: "Petrol", transmission: "Automatic", dailyRate: 3500, status: "Available", plate: "KBZ 234L" },
+  { id: 6, name: "Toyota Hiace", category: "Van", year: 2022, seats: 14, fuel: "Diesel", transmission: "Manual", dailyRate: 12000, status: "Available", plate: "KCC 890N" },
 ];
 
 export default function Fleet() {
@@ -57,9 +57,9 @@ export default function Fleet() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.map((car) => (
           <div key={car.id} className="bg-card border border-border rounded overflow-hidden">
-            <div className="relative">
-              <img src={car.image} alt={car.name} className="w-full h-40 object-cover" />
-              <span className={`absolute top-2 right-2 px-2 py-1 rounded text-xs ${
+            <div className="p-3 border-b border-border flex justify-between items-center">
+              <span className="font-bold">{car.name}</span>
+              <span className={`px-2 py-1 rounded text-xs ${
                 car.status === "Available" ? "bg-green-100 text-green-800" :
                 car.status === "Rented" ? "bg-blue-100 text-blue-800" :
                 "bg-yellow-100 text-yellow-800"
@@ -69,10 +69,7 @@ export default function Fleet() {
             </div>
             <div className="p-4">
               <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="font-bold">{car.name}</h3>
-                  <p className="text-sm text-muted-foreground">{car.category} • {car.year}</p>
-                </div>
+                <p className="text-sm text-muted-foreground">{car.category} • {car.year}</p>
                 <span className="text-sm text-muted-foreground">{car.plate}</span>
               </div>
               <div className="flex gap-4 text-sm text-muted-foreground mb-4">
